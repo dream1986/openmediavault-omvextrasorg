@@ -4,7 +4,7 @@
 # @author    Volker Theile <volker.theile@openmediavault.org>
 # @author    OpenMediaVault Plugin Developers <plugins@omv-extras.org>
 # @copyright Copyright (c) 2009-2013 Volker Theile
-# @copyright Copyright (c) 2013-2019 OpenMediaVault Plugin Developers
+# @copyright Copyright (c) 2013-2020 OpenMediaVault Plugin Developers
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -21,30 +21,58 @@
 
 set -e
 
+arch="$(dpkg --print-architecture)"
+
+if [[ "${arch}" == "amd64" ]]; then
+  isoArch="amd64"
+elif [[ "${arch}" == "i386" ]]; then
+  isoArch="i686"
+else
+  echo "Unsupported architecture."
+  exit 0
+fi
+
 ISO_PATH="/boot"
 GRUB_CLONEZILLA="/etc/grub.d/42_clonezilla"
 CLONEZILLA_VERSION="2.6.0-37"
 CLONEZILLA_ISO="clonezilla-live-${CLONEZILLA_VERSION}-i686-pae.iso"
 
 GRUB_SYSRESCCD="/etc/grub.d/42_sysresccd"
-SYSRESCCD_VERSION="6.0.3"
-SYSRESCCD_ISO="systemrescuecd-${SYSRESCCD_VERSION}.iso"
+SYSRESCCD_VERSION="6.1.1"
+SYSRESCCD_ISO="systemrescuecd-${isoArch}-${SYSRESCCD_VERSION}.iso"
 
 GRUB_GPARTEDLIVE="/etc/grub.d/42_gpartedlive"
-GPARTEDLIVE_VERSION="1.0.0-5"
-GPARTEDLIVE_ISO="gparted-live-${GPARTEDLIVE_VERSION}-i686.iso"
+GPARTEDLIVE_VERSION="1.1.0-1"
+GPARTEDLIVE_ISO="gparted-live-${GPARTEDLIVE_VERSION}-${isoArch}.iso"
 
 GRUB="/etc/default/grub"
 GRUB_CFG="/boot/grub/grub.cfg"
 
+checkDNS()
+{
+  host="/usr/bin/host"
+  if [ -f "${host}" ]; then
+    if ! ${host} sourceforge.net > /dev/null; then
+      echo "DNS error.  Exiting ..."
+      exit 0
+    else
+      echo "DNS OK."
+    fi
+  fi
+}
+
 installclonezilla()
 {
+    checkDNS
+
     echo "Installing Clonezilla..."
     if [ ! -f "${ISO_PATH}/${CLONEZILLA_ISO}" ]; then
         rm -f ${ISO_PATH}/clonezilla*.iso
         wget "https://downloads.sourceforge.net/project/clonezilla/clonezilla_live_stable/${CLONEZILLA_VERSION}/${CLONEZILLA_ISO}" -O ${ISO_PATH}/${CLONEZILLA_ISO} 2>&1
+    else
+        echo "${CLONEZILLA_ISO} already exists.  Skipping download."
     fi
-
+    echo "Creating GRUB entry..."
     cat <<EOF > ${GRUB_CLONEZILLA}
 #!/bin/sh
 exec tail -n +3 \$0
@@ -62,11 +90,15 @@ EOF
 
 installsysresccd()
 {
+    checkDNS
+
     if [ ! -f "${ISO_PATH}/${SYSRESCCD_ISO}" ]; then
         rm -f ${ISO_PATH}/systemrescuecd*.iso
         wget "https://osdn.net/projects/systemrescuecd/storage/releases/${SYSRESCCD_VERSION}/${SYSRESCCD_ISO}" -O ${ISO_PATH}/${SYSRESCCD_ISO} 2>&1
+    else
+        echo "${SYSRESCCD_ISO} already exists.  Skipping download."
     fi
-
+    echo "Creating GRUB entry..."
     cat <<EOF > ${GRUB_SYSRESCCD}
 #!/bin/sh
 exec tail -n +3 \$0
@@ -75,7 +107,7 @@ menuentry 'SystemRescueCD' {
   set imgdevpath="/dev/disk/by-uuid/\$rootuuid"
   set isofile="${ISO_PATH}/${SYSRESCCD_ISO}"
   loopback loop \$isofile
-  linux (loop)/sysresccd/boot/x86_64/vmlinuz rootpass=openmediavault nomodeset archisobasedir=sysresccd copytoram setkmap=us img_dev=\$imgdevpath img_loop=\$isofile earlymodules=loop
+  linux (loop)/sysresccd/boot/x86_64/vmlinuz rootpass=openmediavault nomodeset nofirewall archisobasedir=sysresccd copytoram setkmap=us img_dev=\$imgdevpath img_loop=\$isofile earlymodules=loop
   initrd (loop)/sysresccd/boot/intel_ucode.img (loop)/sysresccd/boot/amd_ucode.img (loop)/sysresccd/boot/x86_64/sysresccd.img
 }
 EOF
@@ -85,11 +117,15 @@ EOF
 
 installgpartedlive()
 {
+    checkDNS
+
     if [ ! -f "${ISO_PATH}/${GPARTEDLIVE_ISO}" ]; then
         rm -f ${ISO_PATH}/gparted-live*.iso
         wget "https://downloads.sourceforge.net/gparted/${GPARTEDLIVE_ISO}" -O ${ISO_PATH}/${GPARTEDLIVE_ISO} 2>&1
+    else
+        echo "${GPARTEDLIVE_ISO} already exists.  Skipping download."
     fi
-
+    echo "Creating GRUB entry..."
     cat <<EOF > ${GRUB_GPARTEDLIVE}
 #!/bin/sh
 exec tail -n +3 \$0

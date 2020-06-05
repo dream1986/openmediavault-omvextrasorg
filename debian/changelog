@@ -1,3 +1,77 @@
+openmediavault-omvextrasorg (5.3.3) stable; urgency=low
+
+  * Add dnsmasq-base when installing cockpit
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Sun, 17 May 2020 14:59:05 -0500
+
+openmediavault-omvextrasorg (5.3.2) stable; urgency=low
+
+  * Add docker override file to wait for local filesystems
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Wed, 13 May 2020 09:13:16 -0500
+
+openmediavault-omvextrasorg (5.3.1) stable; urgency=low
+
+  * Improve dns check
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Thu, 23 Apr 2020 14:32:47 -0500
+
+openmediavault-omvextrasorg (5.3) stable; urgency=low
+
+  * Add advanced options for portainer
+  * Use Proxmox 5.4 kernel
+  * Update locales
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Sun, 19 Apr 2020 10:12:03 -0500
+
+openmediavault-omvextrasorg (5.2.6) stable; urgency=low
+
+  * Use systemrescuecd 6.1.1
+  * Download architecture-specific ISOs
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Wed, 25 Mar 2020 07:38:28 -0500
+
+openmediavault-omvextrasorg (5.2.5) stable; urgency=low
+
+  * Add nofirewall option to systemrescuecd boot
+  * Replace 'slspath' with 'tpldir' for saltstack 3000
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Tue, 25 Feb 2020 20:05:23 -0600
+
+openmediavault-omvextrasorg (5.2.4) stable; urgency=low
+
+  * Use docker-compose 1.25.4
+  * Check DNS before trying to download an ISO
+  * Add more output to grubiso
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Tue, 11 Feb 2020 07:56:42 -0600
+
+openmediavault-omvextrasorg (5.2.3) stable; urgency=low
+
+  * Move portainer open
+  * Update SystemRescueCD to 6.0.7
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Mon, 27 Jan 2020 12:52:38 -0600
+
+openmediavault-omvextrasorg (5.2.2) stable; urgency=low
+
+  * Update gparted-live version to 1.1.0-1
+  * Improve sources list
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Fri, 24 Jan 2020 18:53:13 -0600
+
+openmediavault-omvextrasorg (5.2.1) stable; urgency=low
+
+  * GDPR is stupid.
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Sat, 18 Jan 2020 11:53:35 -0600
+
+openmediavault-omvextrasorg (5.2) stable; urgency=low
+
+  * Create Docker and Cockpit tabs
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Wed, 01 Jan 2020 16:46:27 -0600
+
 openmediavault-omvextrasorg (5.1.11) stable; urgency=low
 
   * Improve messages when installing cockpit, docker, and portainer

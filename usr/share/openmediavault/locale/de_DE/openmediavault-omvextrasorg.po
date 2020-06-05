@@ -4,7 +4,7 @@
 # 
 # Translators:
 # David Hönel <davidh1990@gmx.de>, 2013-2015
-# Ettore Atalan <atalanttore@googlemail.com>, 2014-2016,2019
+# Ettore Atalan <atalanttore@googlemail.com>, 2014-2016,2019-2020
 # Raiko, 2016
 # René P. <phortexx@gmx.net>, 2014
 # WastlJ, 2014-2015
@@ -13,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-omvextras.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-05 13:51-0600\n"
-"PO-Revision-Date: 2019-11-06 19:55+0000\n"
+"POT-Creation-Date: 2020-04-19 10:33-0500\n"
+"PO-Revision-Date: 2020-04-21 22:07+0000\n"
 "Last-Translator: Ettore Atalan <atalanttore@googlemail.com>\n"
 "Language-Team: German (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-omvextrasorg/language/de/)\n"
 "MIME-Version: 1.0\n"
@@ -23,11 +23,17 @@ msgstr ""
 "Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+msgid "Advanced"
+msgstr "Erweitert"
+
+msgid "Agent port"
+msgstr ""
+
 msgid "Backports"
 msgstr "Rückportierungen"
 
 msgid "Cleaning Apt Files and Lists ..."
-msgstr ""
+msgstr "Apt-Dateien und -Listen werden bereinigt ..."
 
 msgid "Clonezilla"
 msgstr "Clonezilla"
@@ -36,16 +42,10 @@ msgid "Cockpit"
 msgstr "Cockpit"
 
 msgid "Cockpit listens on port 9090 for the web interface."
-msgstr ""
+msgstr "Cockpit lauscht auf Port 9090 nach der Web-Schnittstelle."
 
 msgid "Default username: <b>user</b> and password: <b>live</b>"
 msgstr "Standardbenutzername: <b>user</b> und Passwort: <b>live</b>"
-
-msgid "Disable Backports"
-msgstr "Rückportierungen deaktivieren"
-
-msgid "Disabling backports repo ..."
-msgstr ""
 
 msgid "Docker"
 msgstr "Docker"
@@ -71,12 +71,6 @@ msgid ""
 " from ISO."
 msgstr ""
 
-msgid "Enable Backports"
-msgstr "Rückportierungen aktivieren"
-
-msgid "Enabling backports repo ..."
-msgstr ""
-
 msgid "Extras repo"
 msgstr ""
 
@@ -100,26 +94,20 @@ msgid ""
 "headless servers."
 msgstr ""
 
-msgid "ISO uses approximately 139 Mb in /boot directory on OS drive."
-msgstr "ISO belegt ungefähr 139 MB im Verzeichnis /boot auf dem BS-Laufwerk."
+msgid "If port is changed, click Install in the Portainer menu again."
+msgstr ""
 
-msgid "ISO uses approximately 219 Mb in /boot directory on OS drive."
-msgstr "ISO belegt ungefähr 219 MB im Verzeichnis /boot auf dem BS-Laufwerk."
+msgid "Illegal docker storage path - cannot use /sharedfolders paths"
+msgstr ""
 
-msgid "ISO uses approximately 381 Mb in /boot directory on OS drive."
-msgstr "ISO belegt ungefähr 381 MB im Verzeichnis /boot auf dem BS-Laufwerk."
+msgid "Install"
+msgstr "Installieren"
 
 msgid "Install Clonezilla"
 msgstr "Clonezilla installieren"
 
 msgid "Install Clonezilla ISO ..."
 msgstr "Clonezilla ISO installieren ..."
-
-msgid "Install Cockpit"
-msgstr "Cockpit installieren"
-
-msgid "Install Docker"
-msgstr "Docker installieren"
 
 msgid ""
 "Install Docker will download and place a newer docker-compose in "
@@ -139,9 +127,6 @@ msgstr "GParted Live installieren"
 
 msgid "Install GParted Live ISO ..."
 msgstr "GParted Live ISO installieren ..."
-
-msgid "Install Portainer"
-msgstr "Portainer installieren"
 
 msgid ""
 "Install Portainer will install the docker-ce package if not already "
@@ -189,11 +174,11 @@ msgstr ""
 msgid "OMV-Extras"
 msgstr "OMV-Extras"
 
-msgid "Open Cockpit web interface"
-msgstr "Cockpit-Weboberfläche öffnen"
+msgid "Open web"
+msgstr ""
 
-msgid "Open Portainer web interface"
-msgstr "Portainer-Weboberfläche öffnen"
+msgid "Opt-out"
+msgstr ""
 
 msgid ""
 "Path to Docker images and containers storage. Leave blank to use custom "
@@ -205,7 +190,7 @@ msgstr "Portainer"
 
 msgid ""
 "Portainer will listen on port 9000 for the web interface and 8000 for the "
-"agent."
+"agent unless changed."
 msgstr ""
 
 msgid "Proxmox"
@@ -232,20 +217,14 @@ msgstr "SystemRescueCD einmal starten ..."
 msgid "Reboot with the Proxmox kernel before removing non-Proxmox kernels."
 msgstr ""
 
-msgid "Remove Cockpit"
-msgstr "Cockpit entfernen"
-
-msgid "Remove Docker"
-msgstr "Docker entfernen"
+msgid "Remove"
+msgstr "Entfernen"
 
 msgid "Remove Docker will delete docker-compose from /usr/local/bin/."
 msgstr ""
 
 msgid "Remove Docker will remove the docker-compose package."
 msgstr ""
-
-msgid "Remove Portainer"
-msgstr "Portainer entfernen"
 
 msgid ""
 "Remove Portainer will remove the Portainer image and container but the "
@@ -260,6 +239,12 @@ msgstr "Wird entfernt"
 
 msgid "Removing non-Proxmox kernels ..."
 msgstr "Nicht-Proxmox-Kernel werden entfernt ..."
+
+msgid "Restart"
+msgstr "Neustart"
+
+msgid "Restarting docker ..."
+msgstr "Docker wird neu gestartet ..."
 
 msgid "Running apt-get dist-upgrade ..."
 msgstr "apt-get dist-upgrade wird ausgeführt ..."
@@ -286,6 +271,11 @@ msgid ""
 "password: <b>live</b>"
 msgstr "SSH-Server ist standardmäßig aktiviert. Anmeldung mit Benutzername: <b>user</b> und Passwort: <b>live</b>"
 
+msgid ""
+"Save will rewrite daemon.json and restart docker if Docker Storage path has "
+"changed."
+msgstr ""
+
 msgid "Set as default boot kernel"
 msgstr "Als Standard-Bootkernel festlegen"
 
@@ -310,6 +300,9 @@ msgstr "Durch einen falsch festgelegten Standard-Boot-Kernel kann das System unz
 msgid "Settings"
 msgstr "Einstellungen"
 
+msgid "Spaced used by ISO in /boot directory on OS drive"
+msgstr ""
+
 msgid "Status"
 msgstr "Status"
 
@@ -325,7 +318,10 @@ msgstr ""
 msgid "This will fail to remove a linux-image-* kernel if it is still active."
 msgstr ""
 
-msgid "This will install the latest 5.0 kernel."
+msgid "This will install the latest 5.4 kernel."
+msgstr "Dies installiert den neuesten 5.4-Kernel."
+
+msgid "This will opt-out of Portainer's minimal analytics."
 msgstr ""
 
 msgid "This will remove all headers packages with the prefix linux-headers-."
@@ -346,6 +342,12 @@ msgstr "Aktualisierungen"
 msgid "Version"
 msgstr "Version"
 
+msgid "Web port"
+msgstr ""
+
+msgid "Web port and agent port cannot be the same."
+msgstr ""
+
 msgid ""
 "When connecting via ssh, the ssh key will be different than the "
 "OpenMediaVault ssh key and need to be updated on the client system."
@@ -356,22 +358,16 @@ msgid ""
 msgstr ""
 
 msgid "and not running"
-msgstr ""
+msgstr "und läuft nicht"
 
 msgid "and running"
-msgstr ""
+msgstr "und läuft"
 
 msgid "apt clean"
 msgstr "apt clean"
 
-msgid "disabled"
-msgstr "deaktiviert"
-
 msgid "dist-upgrade"
 msgstr "dist-upgrade"
-
-msgid "enabled"
-msgstr "aktiviert"
 
 msgid "n/a"
 msgstr "n/v"

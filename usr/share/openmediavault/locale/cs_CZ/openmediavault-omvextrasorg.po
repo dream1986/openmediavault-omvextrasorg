@@ -4,13 +4,13 @@
 # 
 # Translators:
 # Matěj Mihal <mejatysek@gmail.com>, 2014
-# Pavel Borecki <pavel.borecki@gmail.com>, 2015-2019
+# Pavel Borecki <pavel.borecki@gmail.com>, 2015-2020
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-omvextras.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-05 13:51-0600\n"
-"PO-Revision-Date: 2019-11-06 05:35+0000\n"
+"POT-Creation-Date: 2020-04-19 10:33-0500\n"
+"PO-Revision-Date: 2020-04-20 19:06+0000\n"
 "Last-Translator: Pavel Borecki <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech (Czech Republic) (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-omvextrasorg/language/cs_CZ/)\n"
 "MIME-Version: 1.0\n"
@@ -18,6 +18,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: cs_CZ\n"
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
+
+msgid "Advanced"
+msgstr "Pokročilé"
+
+msgid "Agent port"
+msgstr "Port agenta"
 
 msgid "Backports"
 msgstr "Přenesené z novějšího do staršího vydání (backports)"
@@ -36,12 +42,6 @@ msgstr "Webové rozhraní Cockpit se nachází na portu 9090."
 
 msgid "Default username: <b>user</b> and password: <b>live</b>"
 msgstr "Výchozí uživatelské jméno: <b>user</b> a heslo: <b>live</b>"
-
-msgid "Disable Backports"
-msgstr "Přestat používat backports"
-
-msgid "Disabling backports repo ..."
-msgstr "Vypíná se používání repozitáře backports…"
 
 msgid "Docker"
 msgstr "Docker"
@@ -67,12 +67,6 @@ msgid ""
 " from ISO."
 msgstr "Stáhne ISO obraz systému SystemRescueCD a nastaví zavaděč grub, aby z tohoto ISO bylo možné spustit systém."
 
-msgid "Enable Backports"
-msgstr "Používat backports"
-
-msgid "Enabling backports repo ..."
-msgstr "Zapíná se používání repozitáře backports…"
-
 msgid "Extras repo"
 msgstr "Repozitář extras"
 
@@ -96,26 +90,20 @@ msgid ""
 "headless servers."
 msgstr "IP adresa bude nastavena automaticky protokolem DHCP. Pro stroje bez připojeného monitoru je dobré nastavit statickou zápůjčku na DHCP serveru."
 
-msgid "ISO uses approximately 139 Mb in /boot directory on OS drive."
-msgstr "ISO soubor zabere přibližně 139 MB ve složce /boot na jednotce datového úložiště s operačním systémem."
+msgid "If port is changed, click Install in the Portainer menu again."
+msgstr "Pokud se port změní, klikněte znovu na Nainstalovat v nabídce Portainer"
 
-msgid "ISO uses approximately 219 Mb in /boot directory on OS drive."
-msgstr "ISO soubor zabere přibližně 219 MB ve složce /boot na jednotce datového úložiště s operačním systémem."
+msgid "Illegal docker storage path - cannot use /sharedfolders paths"
+msgstr "Neplatný popis umístění úložiště pro docker – není možné použít popisy umístění /sharedfolders"
 
-msgid "ISO uses approximately 381 Mb in /boot directory on OS drive."
-msgstr "ISO soubor zabere přibližně 381 MB ve složce /boot na jednotce datového úložiště s operačním systémem."
+msgid "Install"
+msgstr "Naistalovat"
 
 msgid "Install Clonezilla"
 msgstr "Připravit systém Clonezilla"
 
 msgid "Install Clonezilla ISO ..."
 msgstr "Příprava systému Clonezilla…"
-
-msgid "Install Cockpit"
-msgstr "Nainstalovat Cockpit"
-
-msgid "Install Docker"
-msgstr "Nainstalovat Docker"
 
 msgid ""
 "Install Docker will download and place a newer docker-compose in "
@@ -135,9 +123,6 @@ msgstr "Připravit systém GParted Live"
 
 msgid "Install GParted Live ISO ..."
 msgstr "Příprava systému GParted Live…"
-
-msgid "Install Portainer"
-msgstr "Nainstalovat Portainer"
 
 msgid ""
 "Install Portainer will install the docker-ce package if not already "
@@ -185,11 +170,11 @@ msgstr "Není vhodné pro stroje, ke kterým není připojený monitor. Ve vých
 msgid "OMV-Extras"
 msgstr "Zdroje přídavných funkcí"
 
-msgid "Open Cockpit web interface"
-msgstr "Otevřít webové rozhraní Cockpit"
+msgid "Open web"
+msgstr "Otevřít web"
 
-msgid "Open Portainer web interface"
-msgstr "Otevřít webové rozhraní Portainer"
+msgid "Opt-out"
+msgstr "Zrušit svou účast"
 
 msgid ""
 "Path to Docker images and containers storage. Leave blank to use custom "
@@ -201,8 +186,8 @@ msgstr "Portainer"
 
 msgid ""
 "Portainer will listen on port 9000 for the web interface and 8000 for the "
-"agent."
-msgstr "Webové rozhraní Portainer bude na portu 9000 a rozhraní pro agenty na portu 8000."
+"agent unless changed."
+msgstr "Webové rozhraní Portainer bude na portu 9000 a rozhraní pro agenty na portu 8000 (pokud nebude změněno)."
 
 msgid "Proxmox"
 msgstr "Proxmox"
@@ -228,20 +213,14 @@ msgstr "Jednorázově restartovat do systému SystemRescueCD"
 msgid "Reboot with the Proxmox kernel before removing non-Proxmox kernels."
 msgstr "Před odebráním jader jiných, než z Proxmox restartujte s Proxmox jádrem."
 
-msgid "Remove Cockpit"
-msgstr "Odebrat Cockpit"
-
-msgid "Remove Docker"
-msgstr "Odebrat Docker"
+msgid "Remove"
+msgstr "Odebrat"
 
 msgid "Remove Docker will delete docker-compose from /usr/local/bin/."
 msgstr "Odebrat Docker smaže docker-compose z /usr/local/bin/."
 
 msgid "Remove Docker will remove the docker-compose package."
 msgstr "Odebrat Docker odebere balíček docker-compose."
-
-msgid "Remove Portainer"
-msgstr "Odebrat Portainer"
 
 msgid ""
 "Remove Portainer will remove the Portainer image and container but the "
@@ -256,6 +235,12 @@ msgstr "Odebírá se"
 
 msgid "Removing non-Proxmox kernels ..."
 msgstr "Odebírání jader nepocházejících z Proxmox…"
+
+msgid "Restart"
+msgstr "Restartovat"
+
+msgid "Restarting docker ..."
+msgstr "Restartování docker…"
 
 msgid "Running apt-get dist-upgrade ..."
 msgstr "Spouštění apt-get dist-upgrade…"
@@ -282,6 +267,11 @@ msgid ""
 "password: <b>live</b>"
 msgstr "Přístup přes SSH je ve výchozím stavu zapnutý. Přihlašovací údaje jsou – uživatelské jméno: <b>user</b> a heslo: <b>live</b>"
 
+msgid ""
+"Save will rewrite daemon.json and restart docker if Docker Storage path has "
+"changed."
+msgstr "Uložení přepíše daemon.json a pokud se změní Docker úložiště, restartuje docker."
+
 msgid "Set as default boot kernel"
 msgstr "Nastavit jako výchozí jádro k zavádění"
 
@@ -306,6 +296,9 @@ msgstr "Nastavení nefungujícího výchozího jádra může způsobit nedostupn
 msgid "Settings"
 msgstr "Nastavení"
 
+msgid "Spaced used by ISO in /boot directory on OS drive"
+msgstr "Prostor zabraný ISO souborem v adresáři /boot disku s operačním systémem"
+
 msgid "Status"
 msgstr "Stav"
 
@@ -321,8 +314,11 @@ msgstr "Toto zapne repozitář Proxmox 6.x."
 msgid "This will fail to remove a linux-image-* kernel if it is still active."
 msgstr "Pokud je stále aktivní, tomuto se nepodaří odebrat jádro linux-image-*."
 
-msgid "This will install the latest 5.0 kernel."
-msgstr "Toto nainstaluje nejnovější 5.x jádro."
+msgid "This will install the latest 5.4 kernel."
+msgstr "Toto nainstaluje nejnovější jádro řady 5.4."
+
+msgid "This will opt-out of Portainer's minimal analytics."
+msgstr "Toto zruší vaši účast na analýze využívání Portainer, odesílané jeho vývojářům."
 
 msgid "This will remove all headers packages with the prefix linux-headers-."
 msgstr "Toto odebere všechny balíčky s hlavičkovými soubory s předponou linux-headers-."
@@ -342,6 +338,12 @@ msgstr "Aktualizace"
 msgid "Version"
 msgstr "Verze"
 
+msgid "Web port"
+msgstr "Port webového rozhraní"
+
+msgid "Web port and agent port cannot be the same."
+msgstr "Port webového rozhraní nemůže být stejný jako port agenta."
+
 msgid ""
 "When connecting via ssh, the ssh key will be different than the "
 "OpenMediaVault ssh key and need to be updated on the client system."
@@ -360,14 +362,8 @@ msgstr "a je spuštěné"
 msgid "apt clean"
 msgstr "apt clean"
 
-msgid "disabled"
-msgstr "vypnuto"
-
 msgid "dist-upgrade"
 msgstr "dist-upgrade"
-
-msgid "enabled"
-msgstr "zapnuto"
 
 msgid "n/a"
 msgstr "n/a"

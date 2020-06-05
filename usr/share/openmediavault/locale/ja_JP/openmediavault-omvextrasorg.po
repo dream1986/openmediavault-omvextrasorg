@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the openmediavault-omvextrasorg package.
 # 
 # Translators:
-# Toshihiro Kan <kansuke4649@gmail.com>, 2014-2019
+# Toshihiro Kan <kansuke4649@gmail.com>, 2014-2020
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-omvextras.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-05 13:51-0600\n"
-"PO-Revision-Date: 2019-11-11 04:04+0000\n"
+"POT-Creation-Date: 2020-04-19 10:33-0500\n"
+"PO-Revision-Date: 2020-04-20 02:23+0000\n"
 "Last-Translator: Toshihiro Kan <kansuke4649@gmail.com>\n"
 "Language-Team: Japanese (Japan) (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-omvextrasorg/language/ja_JP/)\n"
 "MIME-Version: 1.0\n"
@@ -17,6 +17,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: ja_JP\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "Advanced"
+msgstr "アドバンスド"
+
+msgid "Agent port"
+msgstr "エージェントポート"
 
 msgid "Backports"
 msgstr "バックポート"
@@ -35,12 +41,6 @@ msgstr "Cockpit のWebインタフェースはポート9090で待ち受けます
 
 msgid "Default username: <b>user</b> and password: <b>live</b>"
 msgstr "デフォルトのユーザー名: <b>user</b>、パスワード:<b>live</b>"
-
-msgid "Disable Backports"
-msgstr "バックポートを無効化"
-
-msgid "Disabling backports repo ..."
-msgstr "バックポート用リポジトリを無効にしています ..."
 
 msgid "Docker"
 msgstr "Docker"
@@ -66,12 +66,6 @@ msgid ""
 " from ISO."
 msgstr "SystemRescueCD ISOをダウンロードし、ISOからの起動を許可するようにgrubブートローダを設定します。"
 
-msgid "Enable Backports"
-msgstr "バックポートを有効化"
-
-msgid "Enabling backports repo ..."
-msgstr "バックポート用リポジトリを有効にしています ..."
-
 msgid "Extras repo"
 msgstr "その他のリポジトリ"
 
@@ -95,26 +89,20 @@ msgid ""
 "headless servers."
 msgstr "IPアドレスはDHCPによって設定されます。スタティックDHCPはヘッドレスサーバに推奨されています。"
 
-msgid "ISO uses approximately 139 Mb in /boot directory on OS drive."
-msgstr "ISOは、OSのドライブ上の/bootディレクトリ内に約139 MBの容量を使用します。"
+msgid "If port is changed, click Install in the Portainer menu again."
+msgstr "ポートが変更されている場合は、Portainerメニューのインストールをもう一度クリックします。"
 
-msgid "ISO uses approximately 219 Mb in /boot directory on OS drive."
-msgstr "ISOは、OSのドライブ上の/bootディレクトリ内に約219 MBの容量を使用します。"
+msgid "Illegal docker storage path - cannot use /sharedfolders paths"
+msgstr "不正なdockerストレージのパス - /sharedfolders パスは使えません"
 
-msgid "ISO uses approximately 381 Mb in /boot directory on OS drive."
-msgstr "ISOは、OSのドライブ上の/bootディレクトリ内に約381 MBの容量を使用します。"
+msgid "Install"
+msgstr "インストール"
 
 msgid "Install Clonezilla"
 msgstr "Clonezillaのインストール"
 
 msgid "Install Clonezilla ISO ..."
 msgstr "Clonezilla ISOをインストール中 ..."
-
-msgid "Install Cockpit"
-msgstr "Cockpit のインストール"
-
-msgid "Install Docker"
-msgstr "Docker のインストール"
 
 msgid ""
 "Install Docker will download and place a newer docker-compose in "
@@ -134,9 +122,6 @@ msgstr "GParted Liveのインストール"
 
 msgid "Install GParted Live ISO ..."
 msgstr "GParted Live ISOをインストール中 ..."
-
-msgid "Install Portainer"
-msgstr "Portainer のインストール"
 
 msgid ""
 "Install Portainer will install the docker-ce package if not already "
@@ -184,11 +169,11 @@ msgstr "ヘッドレスサーバーにはお勧めしません。 SSHはデフ�
 msgid "OMV-Extras"
 msgstr "OMV-Extras"
 
-msgid "Open Cockpit web interface"
-msgstr "Cockpit のウェブインタフェースを開く"
+msgid "Open web"
+msgstr "Webを開く"
 
-msgid "Open Portainer web interface"
-msgstr "Portainer ウェブ インタフェースを開く"
+msgid "Opt-out"
+msgstr "Opt-out"
 
 msgid ""
 "Path to Docker images and containers storage. Leave blank to use custom "
@@ -200,8 +185,8 @@ msgstr "Portainer"
 
 msgid ""
 "Portainer will listen on port 9000 for the web interface and 8000 for the "
-"agent."
-msgstr "portainerはWebインタフェースの場合はポート9000で、エージェントの場合はポート8000で待ち受けます。"
+"agent unless changed."
+msgstr "Portainerは変更されない限り、ポート9000でWebインターフェイスを待受け、8000でエージェントを待受けます。"
 
 msgid "Proxmox"
 msgstr "Proxmox"
@@ -227,20 +212,14 @@ msgstr "一度だけSystemRescueCDで再起動"
 msgid "Reboot with the Proxmox kernel before removing non-Proxmox kernels."
 msgstr "non-Proxmoxカーネルを削除する前に、Proxmoxカーネルで再起動してください。"
 
-msgid "Remove Cockpit"
-msgstr "Cockpitの削除"
-
-msgid "Remove Docker"
-msgstr "Dockerの削除"
+msgid "Remove"
+msgstr "削除"
 
 msgid "Remove Docker will delete docker-compose from /usr/local/bin/."
 msgstr "Dockerの削除は、/usr/local/bin/からdocker-composeを削除します。"
 
 msgid "Remove Docker will remove the docker-compose package."
 msgstr "Dockerの削除は、docker-composeパッケージを削除します。"
-
-msgid "Remove Portainer"
-msgstr "Portainerの削除"
 
 msgid ""
 "Remove Portainer will remove the Portainer image and container but the "
@@ -255,6 +234,12 @@ msgstr "削除中"
 
 msgid "Removing non-Proxmox kernels ..."
 msgstr "non-Proxmox カーネルを削除しています ..."
+
+msgid "Restart"
+msgstr "再起動"
+
+msgid "Restarting docker ..."
+msgstr "dockerを再起動中 ..."
 
 msgid "Running apt-get dist-upgrade ..."
 msgstr "apt-get dist-upgrade を実行しています..."
@@ -281,6 +266,11 @@ msgid ""
 "password: <b>live</b>"
 msgstr "SSHサーバはデフォルトで有効になっています。ログイン用ユーザー名:<b>user</b>、パスワード: <b>live</b>"
 
+msgid ""
+"Save will rewrite daemon.json and restart docker if Docker Storage path has "
+"changed."
+msgstr "Dockerストレージパスが変更された場合、保存するとdaemon.jsonを書き換えてdockerを再起動します。"
+
 msgid "Set as default boot kernel"
 msgstr "デフォルトの起動カーネルをセット"
 
@@ -305,6 +295,9 @@ msgstr "間違ったデフォルトの起動カーネルを設定すると、シ
 msgid "Settings"
 msgstr "設定"
 
+msgid "Spaced used by ISO in /boot directory on OS drive"
+msgstr "OSドライブの/ bootディレクトリでISOによって使用される容量"
+
 msgid "Status"
 msgstr "状態"
 
@@ -320,8 +313,11 @@ msgstr "Proxmox 6.x のリポジトリが有効になります。"
 msgid "This will fail to remove a linux-image-* kernel if it is still active."
 msgstr "linux-image- * カーネルがまだアクティブであれば削除することはできません。"
 
-msgid "This will install the latest 5.0 kernel."
-msgstr "最新の5.0カーネルがインストールされます。"
+msgid "This will install the latest 5.4 kernel."
+msgstr "最新の5.4カーネルがインストールされます。"
+
+msgid "This will opt-out of Portainer's minimal analytics."
+msgstr "これにより、Portainerの最小限の分析がオプトアウトされます。"
 
 msgid "This will remove all headers packages with the prefix linux-headers-."
 msgstr "linux-headers-で始まる、すべてのヘッダパッケージが削除されます。"
@@ -341,6 +337,12 @@ msgstr "アップデート"
 msgid "Version"
 msgstr "バージョン"
 
+msgid "Web port"
+msgstr "ウェブポート"
+
+msgid "Web port and agent port cannot be the same."
+msgstr "ウェブポートとエージェントポートは同じにはできません。"
+
 msgid ""
 "When connecting via ssh, the ssh key will be different than the "
 "OpenMediaVault ssh key and need to be updated on the client system."
@@ -359,14 +361,8 @@ msgstr "実行中"
 msgid "apt clean"
 msgstr "apt clean"
 
-msgid "disabled"
-msgstr "無効化済"
-
 msgid "dist-upgrade"
 msgstr "dist-upgrade"
-
-msgid "enabled"
-msgstr "有効化済"
 
 msgid "n/a"
 msgstr "n/a"

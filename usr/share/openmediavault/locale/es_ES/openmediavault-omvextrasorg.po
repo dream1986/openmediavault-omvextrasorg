@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the openmediavault-omvextrasorg package.
 # 
 # Translators:
-# Raul Fernandez Garcia <raulfg3@gmail.com>, 2014-2019
+# Raul Fernandez Garcia <raulfg3@gmail.com>, 2014-2020
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-omvextras.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-05 13:51-0600\n"
-"PO-Revision-Date: 2019-11-14 15:42+0000\n"
+"POT-Creation-Date: 2020-04-19 10:33-0500\n"
+"PO-Revision-Date: 2020-05-03 17:01+0000\n"
 "Last-Translator: Raul Fernandez Garcia <raulfg3@gmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-omvextrasorg/language/es/)\n"
 "MIME-Version: 1.0\n"
@@ -17,6 +17,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: es\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Advanced"
+msgstr "Avanzado"
+
+msgid "Agent port"
+msgstr "Puerto para el agente"
 
 msgid "Backports"
 msgstr "Backports"
@@ -35,12 +41,6 @@ msgstr "Cockpit está a la escucha en el puerto 9000 para mostrar su interfaz."
 
 msgid "Default username: <b>user</b> and password: <b>live</b>"
 msgstr "Usuario por defecto: <b>user</b> Contraseña: <b>live</b>"
-
-msgid "Disable Backports"
-msgstr "Deshabilitar Backports"
-
-msgid "Disabling backports repo ..."
-msgstr "Deshabilitando el repositorio backports ...."
 
 msgid "Docker"
 msgstr "Docker"
@@ -66,12 +66,6 @@ msgid ""
 " from ISO."
 msgstr "Descargar SystemRescueCD y configurando el cargador Grub para permitir arrancar desde la ISO."
 
-msgid "Enable Backports"
-msgstr "Habilitar Backports"
-
-msgid "Enabling backports repo ..."
-msgstr "Habilitando repositorio Backports ..."
-
 msgid "Extras repo"
 msgstr "Repositorio de Extras"
 
@@ -95,26 +89,20 @@ msgid ""
 "headless servers."
 msgstr "La IP debe ser por DHCP. Solo se recomienda IP estatica para servidores sin monitor."
 
-msgid "ISO uses approximately 139 Mb in /boot directory on OS drive."
-msgstr "La ISO utiliza aproximadamente 139 Mb en el directorio /boot del disco de arranque."
+msgid "If port is changed, click Install in the Portainer menu again."
+msgstr "Si se cambia el puerto, se debe pulsar en el menú la opción Instalar."
 
-msgid "ISO uses approximately 219 Mb in /boot directory on OS drive."
-msgstr "La ISO utiliza aproximadamente 219 Mb en el directorio /boot del disco de arranque."
+msgid "Illegal docker storage path - cannot use /sharedfolders paths"
+msgstr "Ruta ilegal - No usar la carpeta sharedfolders"
 
-msgid "ISO uses approximately 381 Mb in /boot directory on OS drive."
-msgstr "La ISO utiliza aproximadamente 381 Mb en el directorio /boot del disco de arranque."
+msgid "Install"
+msgstr "Instalar"
 
 msgid "Install Clonezilla"
 msgstr "Instalar Clonezilla"
 
 msgid "Install Clonezilla ISO ..."
 msgstr "Instalando ISO de Clonezilla ..."
-
-msgid "Install Cockpit"
-msgstr "Instalar Cockpit"
-
-msgid "Install Docker"
-msgstr "Instalar Docker"
 
 msgid ""
 "Install Docker will download and place a newer docker-compose in "
@@ -134,9 +122,6 @@ msgstr "Instalar GParted Live"
 
 msgid "Install GParted Live ISO ..."
 msgstr "Instalando la ISO de GParted Live ..."
-
-msgid "Install Portainer"
-msgstr "Instalar Portainer"
 
 msgid ""
 "Install Portainer will install the docker-ce package if not already "
@@ -184,11 +169,11 @@ msgstr "No se recomienda para servidores sin monitor. No se habilita SSH por def
 msgid "OMV-Extras"
 msgstr "OMV-Extras"
 
-msgid "Open Cockpit web interface"
-msgstr "Abrir la interfaz web de Cockpit"
+msgid "Open web"
+msgstr "Abrir web"
 
-msgid "Open Portainer web interface"
-msgstr "Abrir la interfaz web de Portainer"
+msgid "Opt-out"
+msgstr "Opt-out"
 
 msgid ""
 "Path to Docker images and containers storage. Leave blank to use custom "
@@ -200,8 +185,8 @@ msgstr "Portainer"
 
 msgid ""
 "Portainer will listen on port 9000 for the web interface and 8000 for the "
-"agent."
-msgstr "Portainer escucha el puerto 9000 para la interfaz web y el 8000 para el agente."
+"agent unless changed."
+msgstr "Portainer usa el puerto 9000 para su WebGUI y el puerto 8000 para su agente a menos que se cambie. "
 
 msgid "Proxmox"
 msgstr "Proxmox"
@@ -227,20 +212,14 @@ msgstr "Reiniciar para arrancar SystemRescueCD una vez"
 msgid "Reboot with the Proxmox kernel before removing non-Proxmox kernels."
 msgstr "Reiniciar con el kernel proxmox, antes de borrar otros kernel No-Proxmox."
 
-msgid "Remove Cockpit"
-msgstr "Eliminar Cockpit"
-
-msgid "Remove Docker"
-msgstr "Eliminar Docker"
+msgid "Remove"
+msgstr "Eliminar"
 
 msgid "Remove Docker will delete docker-compose from /usr/local/bin/."
 msgstr "Eliminar Docker, también elimina docker-compose de /usr/local/bin/."
 
 msgid "Remove Docker will remove the docker-compose package."
 msgstr "Eliminar Docker, también elimina el paquete docker-compose "
-
-msgid "Remove Portainer"
-msgstr "Eliminar Portainer"
 
 msgid ""
 "Remove Portainer will remove the Portainer image and container but the "
@@ -255,6 +234,12 @@ msgstr "Eliminando"
 
 msgid "Removing non-Proxmox kernels ..."
 msgstr "Eliminando kernels no-proxmox"
+
+msgid "Restart"
+msgstr "Reiniciar"
+
+msgid "Restarting docker ..."
+msgstr "Reiniciando Docker ..."
 
 msgid "Running apt-get dist-upgrade ..."
 msgstr "Ejecutando apt-get dist-upgrade ..."
@@ -281,6 +266,11 @@ msgid ""
 "password: <b>live</b>"
 msgstr "El servidor SSH , está activado por defecto. Utilizar como usuario: <b>user</b> y como contraseña: <b>live</b>"
 
+msgid ""
+"Save will rewrite daemon.json and restart docker if Docker Storage path has "
+"changed."
+msgstr "Salvar, rescribirá el demonio.json y reiniciará los dockers si la ruta de almacenamiento ha cambiado."
+
 msgid "Set as default boot kernel"
 msgstr "Marcar como el kernel por defecto"
 
@@ -305,6 +295,9 @@ msgstr "Activar un kernel erroneo, puede hacer inaccesible el sistema. En el men
 msgid "Settings"
 msgstr "Opciones"
 
+msgid "Spaced used by ISO in /boot directory on OS drive"
+msgstr "espacio usado por la ISO en el directorio /boot del disco de arranque."
+
 msgid "Status"
 msgstr "Estado"
 
@@ -320,8 +313,11 @@ msgstr "Eso habilita el repositorio 6.x de proxmox."
 msgid "This will fail to remove a linux-image-* kernel if it is still active."
 msgstr "Fallará al eliminar el kernel si aún está activo."
 
-msgid "This will install the latest 5.0 kernel."
-msgstr "Esto instala el ultimo kernel 5,x."
+msgid "This will install the latest 5.4 kernel."
+msgstr "Instalar el último kernel 5.4"
+
+msgid "This will opt-out of Portainer's minimal analytics."
+msgstr "Esto permite un análisis mínimo de portainer con opt-out "
 
 msgid "This will remove all headers packages with the prefix linux-headers-."
 msgstr "Esto eliminará todas las cabeceras que contengan el prefijo linux-headers-."
@@ -341,6 +337,12 @@ msgstr "Actualizaciones"
 msgid "Version"
 msgstr "Versión"
 
+msgid "Web port"
+msgstr "Puerto WebGUI"
+
+msgid "Web port and agent port cannot be the same."
+msgstr "el Puerto WebGUI y el puerto para el agente, No pueden ser el mismo."
+
 msgid ""
 "When connecting via ssh, the ssh key will be different than the "
 "OpenMediaVault ssh key and need to be updated on the client system."
@@ -359,14 +361,8 @@ msgstr "No corriendo"
 msgid "apt clean"
 msgstr "apt clean"
 
-msgid "disabled"
-msgstr "Des habilitado"
-
 msgid "dist-upgrade"
 msgstr "dist-upgrade"
-
-msgid "enabled"
-msgstr "habilitado"
 
 msgid "n/a"
 msgstr "n/d"

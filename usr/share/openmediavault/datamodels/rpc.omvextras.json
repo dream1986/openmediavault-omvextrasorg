@@ -12,9 +12,37 @@
 				"type": "boolean",
 				"required": false
 			},
+			"backportsStatus": {
+				"type": "boolean",
+				"required": false
+			}
+		}
+	}
+},{
+	"type": "rpc",
+	"id": "rpc.omvextras.setdocker",
+	"params": {
+		"type": "object",
+		"properties": {
 			"dockerStorage": {
 				"type": "string",
 				"required": false
+			},
+			"optout": {
+				"type": "boolean",
+				"required": false
+			},
+			"webport": {
+				"type": "integer",
+				"minimum": 1000,
+				"maximum": 65535,
+				"required": true
+			},
+			"agentport": {
+				"type": "integer",
+				"minimum": 1000,
+				"maximum": 65535,
+				"required": true
 			}
 		}
 	}
@@ -34,6 +62,7 @@
 					"cockpit_remove",
 					"docker_install",
 					"docker_remove",
+					"docker_restart",
 					"installcz",
 					"installgp",
 					"installsys",

@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the openmediavault-omvextrasorg package.
 # 
 # Translators:
-# kochin <kochinc@outlook.com>, 2014-2019
+# kochin <kochinc@outlook.com>, 2014-2020
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-omvextras.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-05 13:51-0600\n"
-"PO-Revision-Date: 2019-11-19 04:34+0000\n"
+"POT-Creation-Date: 2020-04-19 10:33-0500\n"
+"PO-Revision-Date: 2020-04-20 03:54+0000\n"
 "Last-Translator: kochin <kochinc@outlook.com>\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-omvextrasorg/language/zh_TW/)\n"
 "MIME-Version: 1.0\n"
@@ -17,6 +17,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "Advanced"
+msgstr "進階"
+
+msgid "Agent port"
+msgstr "代理服務連接埠"
 
 msgid "Backports"
 msgstr "向後移植"
@@ -35,12 +41,6 @@ msgstr "Cockpit 在連接埠 9090 監聽網站介面。"
 
 msgid "Default username: <b>user</b> and password: <b>live</b>"
 msgstr "預設 用戶名稱：<b>user</b> 與 密碼：<b>live</b>"
-
-msgid "Disable Backports"
-msgstr "停用向後移植"
-
-msgid "Disabling backports repo ..."
-msgstr "停用向後移植套件庫中 ..."
 
 msgid "Docker"
 msgstr "Docker"
@@ -66,12 +66,6 @@ msgid ""
 " from ISO."
 msgstr "下載 SystemRescuecd ISO，並將 grub 啟動載入器設置成允許從 ISO 啟動。"
 
-msgid "Enable Backports"
-msgstr "啟用向後移植"
-
-msgid "Enabling backports repo ..."
-msgstr "啟用向後移植套件庫中 ..."
-
 msgid "Extras repo"
 msgstr "Extras 套件庫"
 
@@ -95,26 +89,20 @@ msgid ""
 "headless servers."
 msgstr "IP 地址將由 DHCP 設定。建議在無頭伺服器上使用靜態 DHCP。"
 
-msgid "ISO uses approximately 139 Mb in /boot directory on OS drive."
-msgstr "ISO 在作業系統磁碟上的 /boot 目錄會使用大約 139 Mb。"
+msgid "If port is changed, click Install in the Portainer menu again."
+msgstr "若連接埠被改變，請於 Portainer 選單中再點按「安裝」一次。"
 
-msgid "ISO uses approximately 219 Mb in /boot directory on OS drive."
-msgstr "ISO 在作業系統磁碟上的 /boot 目錄會使用大約 219 Mb。"
+msgid "Illegal docker storage path - cannot use /sharedfolders paths"
+msgstr "非法的 docker 儲存路徑 - 不能使用 /sharedfolders 路徑"
 
-msgid "ISO uses approximately 381 Mb in /boot directory on OS drive."
-msgstr "ISO 在作業系統磁碟上的 /boot 目錄會使用大約 381 Mb。"
+msgid "Install"
+msgstr "安裝"
 
 msgid "Install Clonezilla"
 msgstr "安裝 Clonezilla"
 
 msgid "Install Clonezilla ISO ..."
 msgstr "安裝 Clonezilla ISO ..."
-
-msgid "Install Cockpit"
-msgstr "安裝 Cockpit"
-
-msgid "Install Docker"
-msgstr "安裝 Docker"
 
 msgid ""
 "Install Docker will download and place a newer docker-compose in "
@@ -134,9 +122,6 @@ msgstr "安裝 GParted Live"
 
 msgid "Install GParted Live ISO ..."
 msgstr "安裝 GParted Live ISO ..."
-
-msgid "Install Portainer"
-msgstr "安裝 Portainer"
 
 msgid ""
 "Install Portainer will install the docker-ce package if not already "
@@ -184,11 +169,11 @@ msgstr "不建議在無頭伺服器上使用。SSH 並非預設為啟動。"
 msgid "OMV-Extras"
 msgstr "OMV-Extras"
 
-msgid "Open Cockpit web interface"
-msgstr "開啟 Cockpit 網站介面"
+msgid "Open web"
+msgstr "打開網頁"
 
-msgid "Open Portainer web interface"
-msgstr "開啟 Portainer 網站介面"
+msgid "Opt-out"
+msgstr "選擇不參與"
 
 msgid ""
 "Path to Docker images and containers storage. Leave blank to use custom "
@@ -200,8 +185,8 @@ msgstr "Portainer"
 
 msgid ""
 "Portainer will listen on port 9000 for the web interface and 8000 for the "
-"agent."
-msgstr "Portainer 將在連接埠 9000 監聽網站介面，在連接埠 8000 上監聽代理服務。"
+"agent unless changed."
+msgstr "Portainer 將在連接埠 9000 監聽網站介面，在連接埠 8000 上監聽代理服務，除非被改變。"
 
 msgid "Proxmox"
 msgstr "Proxmox"
@@ -227,20 +212,14 @@ msgstr "重新啟動進入 SystemRescueCD 一次"
 msgid "Reboot with the Proxmox kernel before removing non-Proxmox kernels."
 msgstr "在移除 非Proxmox 系統核心之前，請先以 Promxmox 系統核心重新啟動。"
 
-msgid "Remove Cockpit"
-msgstr "移除 Cockpit"
-
-msgid "Remove Docker"
-msgstr "移除 Docker"
+msgid "Remove"
+msgstr "移除"
 
 msgid "Remove Docker will delete docker-compose from /usr/local/bin/."
 msgstr "移除 Docker 將會把 docker-compose 從 /usr/local/bin/ 裡刪除掉。"
 
 msgid "Remove Docker will remove the docker-compose package."
 msgstr "移除 Docker 將會把 docker-compose 套件移除。"
-
-msgid "Remove Portainer"
-msgstr "移除 Portainer"
 
 msgid ""
 "Remove Portainer will remove the Portainer image and container but the "
@@ -255,6 +234,12 @@ msgstr "移除中"
 
 msgid "Removing non-Proxmox kernels ..."
 msgstr "移除 非Proxmox 系統核心中 ..."
+
+msgid "Restart"
+msgstr "重新啟動"
+
+msgid "Restarting docker ..."
+msgstr "重新啟動 docker 中 ..."
 
 msgid "Running apt-get dist-upgrade ..."
 msgstr "執行 apt-get dist-upgrade 中 ..."
@@ -281,6 +266,11 @@ msgid ""
 "password: <b>live</b>"
 msgstr "SSH 伺服器被預設為啟用。請以用戶名稱：<b>user</b> 和密碼：<b>live</b> 來登入"
 
+msgid ""
+"Save will rewrite daemon.json and restart docker if Docker Storage path has "
+"changed."
+msgstr "存入將會蓋寫過 daemon.json，如果 Docker 的儲存路徑有改變，則也重新啟動 docker。"
+
 msgid "Set as default boot kernel"
 msgstr "設定為預設的啟動系統核心"
 
@@ -305,6 +295,9 @@ msgstr "設定錯誤的啟動系統核心可能造成無法進入系統。啟動
 msgid "Settings"
 msgstr "設定"
 
+msgid "Spaced used by ISO in /boot directory on OS drive"
+msgstr "在作業系統硬碟上的 /root 檔案目錄內，被 ISO 所佔用的空間。 "
+
 msgid "Status"
 msgstr "狀態"
 
@@ -320,8 +313,11 @@ msgstr "這將啟用 Proxmox 6.x 套件庫。"
 msgid "This will fail to remove a linux-image-* kernel if it is still active."
 msgstr "移除 linux-image-* kernel 可能會失敗，如果它仍在操作中。"
 
-msgid "This will install the latest 5.0 kernel."
-msgstr "這將會安裝最新的 5.0 系統核心。"
+msgid "This will install the latest 5.4 kernel."
+msgstr "這將會安裝最新的 5.4 系統核心。"
+
+msgid "This will opt-out of Portainer's minimal analytics."
+msgstr "這將選擇不參與 Portainer 之極少量的分析。"
 
 msgid "This will remove all headers packages with the prefix linux-headers-."
 msgstr "這將會移除所有前綴詞是 linux-headers- 的標題檔案套件。"
@@ -341,6 +337,12 @@ msgstr "更新方式"
 msgid "Version"
 msgstr "版本"
 
+msgid "Web port"
+msgstr "網頁連接埠"
+
+msgid "Web port and agent port cannot be the same."
+msgstr "網頁連接埠與代理服務連接埠不可相同。"
+
 msgid ""
 "When connecting via ssh, the ssh key will be different than the "
 "OpenMediaVault ssh key and need to be updated on the client system."
@@ -359,14 +361,8 @@ msgstr "並且正在執行中"
 msgid "apt clean"
 msgstr "apt clean"
 
-msgid "disabled"
-msgstr "已停用"
-
 msgid "dist-upgrade"
 msgstr "dist-upgrade"
-
-msgid "enabled"
-msgstr "已啟用"
 
 msgid "n/a"
 msgstr "不適用"

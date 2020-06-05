@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-omvextras.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-05 13:51-0600\n"
-"PO-Revision-Date: 2019-11-05 19:51+0000\n"
+"POT-Creation-Date: 2020-04-19 10:33-0500\n"
+"PO-Revision-Date: 2020-04-19 15:33+0000\n"
 "Last-Translator: Aaron Murray <aaronmurray27@gmail.com>\n"
 "Language-Team: Italian (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-omvextrasorg/language/it/)\n"
 "MIME-Version: 1.0\n"
@@ -18,6 +18,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: it\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Advanced"
+msgstr ""
+
+msgid "Agent port"
+msgstr ""
 
 msgid "Backports"
 msgstr ""
@@ -36,12 +42,6 @@ msgstr ""
 
 msgid "Default username: <b>user</b> and password: <b>live</b>"
 msgstr "Utente: <b>user</b> e password: <b>live</b> predefiniti"
-
-msgid "Disable Backports"
-msgstr ""
-
-msgid "Disabling backports repo ..."
-msgstr ""
 
 msgid "Docker"
 msgstr ""
@@ -67,12 +67,6 @@ msgid ""
 " from ISO."
 msgstr ""
 
-msgid "Enable Backports"
-msgstr ""
-
-msgid "Enabling backports repo ..."
-msgstr ""
-
 msgid "Extras repo"
 msgstr ""
 
@@ -96,26 +90,20 @@ msgid ""
 "headless servers."
 msgstr "L'indirizzo IP sarà impostato da DHCP. L'utilizzo di DHCP statico è consigliato per i server headless."
 
-msgid "ISO uses approximately 139 Mb in /boot directory on OS drive."
-msgstr "La ISO utilizza circa 139 MB nella directory /boot sul disco di sistema."
+msgid "If port is changed, click Install in the Portainer menu again."
+msgstr ""
 
-msgid "ISO uses approximately 219 Mb in /boot directory on OS drive."
-msgstr "La ISO utilizza circa 219 MB nella directory /boot sul disco di sistema."
+msgid "Illegal docker storage path - cannot use /sharedfolders paths"
+msgstr ""
 
-msgid "ISO uses approximately 381 Mb in /boot directory on OS drive."
-msgstr "La ISO utilizza circa 381 MB nella directory /boot sul disco di sistema."
+msgid "Install"
+msgstr ""
 
 msgid "Install Clonezilla"
 msgstr "Installa Clonezilla"
 
 msgid "Install Clonezilla ISO ..."
 msgstr "Installa ISO di Clonezilla ..."
-
-msgid "Install Cockpit"
-msgstr ""
-
-msgid "Install Docker"
-msgstr ""
 
 msgid ""
 "Install Docker will download and place a newer docker-compose in "
@@ -135,9 +123,6 @@ msgstr "Installa GParted Live"
 
 msgid "Install GParted Live ISO ..."
 msgstr "Installa ISO di GParted Live"
-
-msgid "Install Portainer"
-msgstr ""
 
 msgid ""
 "Install Portainer will install the docker-ce package if not already "
@@ -185,10 +170,10 @@ msgstr "Non consigliato per i server headless. SSH non è abilitato per impostaz
 msgid "OMV-Extras"
 msgstr "OMV-Extras"
 
-msgid "Open Cockpit web interface"
+msgid "Open web"
 msgstr ""
 
-msgid "Open Portainer web interface"
+msgid "Opt-out"
 msgstr ""
 
 msgid ""
@@ -201,7 +186,7 @@ msgstr ""
 
 msgid ""
 "Portainer will listen on port 9000 for the web interface and 8000 for the "
-"agent."
+"agent unless changed."
 msgstr ""
 
 msgid "Proxmox"
@@ -228,19 +213,13 @@ msgstr "Riavvia su SystemRescueCD una volta sola"
 msgid "Reboot with the Proxmox kernel before removing non-Proxmox kernels."
 msgstr ""
 
-msgid "Remove Cockpit"
-msgstr ""
-
-msgid "Remove Docker"
+msgid "Remove"
 msgstr ""
 
 msgid "Remove Docker will delete docker-compose from /usr/local/bin/."
 msgstr ""
 
 msgid "Remove Docker will remove the docker-compose package."
-msgstr ""
-
-msgid "Remove Portainer"
 msgstr ""
 
 msgid ""
@@ -255,6 +234,12 @@ msgid "Removing"
 msgstr ""
 
 msgid "Removing non-Proxmox kernels ..."
+msgstr ""
+
+msgid "Restart"
+msgstr ""
+
+msgid "Restarting docker ..."
 msgstr ""
 
 msgid "Running apt-get dist-upgrade ..."
@@ -282,6 +267,11 @@ msgid ""
 "password: <b>live</b>"
 msgstr "Il server SSH è abilitato per impostazione predefinita. Accedi con username: <b>user</b> e password: <b>live</b>"
 
+msgid ""
+"Save will rewrite daemon.json and restart docker if Docker Storage path has "
+"changed."
+msgstr ""
+
 msgid "Set as default boot kernel"
 msgstr "Imposta come kernel di avvio predefinito"
 
@@ -306,6 +296,9 @@ msgstr "L'impostazione errata del kernel di avvio può rendere non accessibile i
 msgid "Settings"
 msgstr ""
 
+msgid "Spaced used by ISO in /boot directory on OS drive"
+msgstr ""
+
 msgid "Status"
 msgstr ""
 
@@ -321,7 +314,10 @@ msgstr ""
 msgid "This will fail to remove a linux-image-* kernel if it is still active."
 msgstr ""
 
-msgid "This will install the latest 5.0 kernel."
+msgid "This will install the latest 5.4 kernel."
+msgstr ""
+
+msgid "This will opt-out of Portainer's minimal analytics."
 msgstr ""
 
 msgid "This will remove all headers packages with the prefix linux-headers-."
@@ -342,6 +338,12 @@ msgstr ""
 msgid "Version"
 msgstr ""
 
+msgid "Web port"
+msgstr ""
+
+msgid "Web port and agent port cannot be the same."
+msgstr ""
+
 msgid ""
 "When connecting via ssh, the ssh key will be different than the "
 "OpenMediaVault ssh key and need to be updated on the client system."
@@ -360,13 +362,7 @@ msgstr ""
 msgid "apt clean"
 msgstr ""
 
-msgid "disabled"
-msgstr ""
-
 msgid "dist-upgrade"
-msgstr ""
-
-msgid "enabled"
 msgstr ""
 
 msgid "n/a"

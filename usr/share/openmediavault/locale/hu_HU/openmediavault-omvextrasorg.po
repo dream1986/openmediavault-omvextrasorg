@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-omvextras.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-05 13:51-0600\n"
-"PO-Revision-Date: 2019-11-05 19:51+0000\n"
+"POT-Creation-Date: 2020-04-19 10:33-0500\n"
+"PO-Revision-Date: 2020-04-19 15:33+0000\n"
 "Last-Translator: Aaron Murray <aaronmurray27@gmail.com>\n"
 "Language-Team: Hungarian (Hungary) (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-omvextrasorg/language/hu_HU/)\n"
 "MIME-Version: 1.0\n"
@@ -19,6 +19,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: hu_HU\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Advanced"
+msgstr ""
+
+msgid "Agent port"
+msgstr ""
 
 msgid "Backports"
 msgstr "Visszaportolások"
@@ -37,12 +43,6 @@ msgstr "A Cockpit webes felhasználói felülete a 9090-es porton hallgat."
 
 msgid "Default username: <b>user</b> and password: <b>live</b>"
 msgstr "Alapértelmezett felhasználónév: <b>felhasználó</b> és jelszó: <b>élő</b>"
-
-msgid "Disable Backports"
-msgstr "Visszaportolások letiltása"
-
-msgid "Disabling backports repo ..."
-msgstr "Visszaportolt tároló letiltása…"
 
 msgid "Docker"
 msgstr "Docker"
@@ -68,12 +68,6 @@ msgid ""
 " from ISO."
 msgstr "SystemRescueCD ISO letöltése és a GRUB rendszerbetöltő konfigurálása, hogy lehessen rendszert indítani az ISO-ról."
 
-msgid "Enable Backports"
-msgstr "Visszaportolások engedélyezése"
-
-msgid "Enabling backports repo ..."
-msgstr "Visszaportolt tároló engedélyezése…"
-
 msgid "Extras repo"
 msgstr "Extrák tároló"
 
@@ -97,26 +91,20 @@ msgid ""
 "headless servers."
 msgstr "Az IP címet a DHCP fogja kiosztani. Statikus DHCP alkalmazása periféria nélküli kiszolgálóknál javasolt. "
 
-msgid "ISO uses approximately 139 Mb in /boot directory on OS drive."
-msgstr "Az ISO fájl kb. 139 MB-ot foglal el az operációs rendszer /boot mappájában."
+msgid "If port is changed, click Install in the Portainer menu again."
+msgstr ""
 
-msgid "ISO uses approximately 219 Mb in /boot directory on OS drive."
-msgstr "Az ISO fájl kb. 219 MB-ot foglal el az operációs rendszer /boot mappájában."
+msgid "Illegal docker storage path - cannot use /sharedfolders paths"
+msgstr ""
 
-msgid "ISO uses approximately 381 Mb in /boot directory on OS drive."
-msgstr "Az ISO fájl kb. 381 Mb-ot foglal el az operációs rendszer /boot mappájában."
+msgid "Install"
+msgstr ""
 
 msgid "Install Clonezilla"
 msgstr "Clonezilla telepítése"
 
 msgid "Install Clonezilla ISO ..."
 msgstr "Clonezilla ISO telepítése…"
-
-msgid "Install Cockpit"
-msgstr "Cockpit telepítése"
-
-msgid "Install Docker"
-msgstr "Docker telepítése"
 
 msgid ""
 "Install Docker will download and place a newer docker-compose in "
@@ -136,9 +124,6 @@ msgstr "GParted Live telepítése"
 
 msgid "Install GParted Live ISO ..."
 msgstr "GParted Live ISO telepítése…"
-
-msgid "Install Portainer"
-msgstr "Portainer telepítése"
 
 msgid ""
 "Install Portainer will install the docker-ce package if not already "
@@ -186,11 +171,11 @@ msgstr "Nem tanácsolt periféria nélküli kiszolgálókra. Az SSH nincs enged�
 msgid "OMV-Extras"
 msgstr "OMV-Extrák"
 
-msgid "Open Cockpit web interface"
-msgstr "Cockpit webes felületének megnyitása"
+msgid "Open web"
+msgstr ""
 
-msgid "Open Portainer web interface"
-msgstr "Portainer webes felület megnyitása"
+msgid "Opt-out"
+msgstr ""
 
 msgid ""
 "Path to Docker images and containers storage. Leave blank to use custom "
@@ -202,8 +187,8 @@ msgstr "Portainer"
 
 msgid ""
 "Portainer will listen on port 9000 for the web interface and 8000 for the "
-"agent."
-msgstr "A Portainer webes felhasználói felülete a 9000-es porton hallgat, az ügynök pedig a 8000-en."
+"agent unless changed."
+msgstr ""
 
 msgid "Proxmox"
 msgstr "Proxmox"
@@ -229,20 +214,14 @@ msgstr "Újraindítás egyszer a SystemRescueCD-vel"
 msgid "Reboot with the Proxmox kernel before removing non-Proxmox kernels."
 msgstr "Újraindítás Proxmox kernellel a nem Proxmox kernelek eltávolítása előtt."
 
-msgid "Remove Cockpit"
-msgstr "Cockpit eltávolítása"
-
-msgid "Remove Docker"
-msgstr "Docker eltávolítása"
+msgid "Remove"
+msgstr ""
 
 msgid "Remove Docker will delete docker-compose from /usr/local/bin/."
 msgstr "A Docker eltávolítása törölni fogja a docker-compose-t a /usr/local/bin/-ből."
 
 msgid "Remove Docker will remove the docker-compose package."
 msgstr ""
-
-msgid "Remove Portainer"
-msgstr "Portainer eltávolítása"
 
 msgid ""
 "Remove Portainer will remove the Portainer image and container but the "
@@ -257,6 +236,12 @@ msgstr "Eltávolítás"
 
 msgid "Removing non-Proxmox kernels ..."
 msgstr "Nem Proxmox kernelek eltávolítása…"
+
+msgid "Restart"
+msgstr ""
+
+msgid "Restarting docker ..."
+msgstr ""
 
 msgid "Running apt-get dist-upgrade ..."
 msgstr "apt-get dist-upgrade futtatása ..."
@@ -283,6 +268,11 @@ msgid ""
 "password: <b>live</b>"
 msgstr "Az SSH szerver alapértelmezett engedélyezve van. Felhasználói név a belépéshez: <b>user</b>, valamint a jelszó: <b>live</b>"
 
+msgid ""
+"Save will rewrite daemon.json and restart docker if Docker Storage path has "
+"changed."
+msgstr ""
+
 msgid "Set as default boot kernel"
 msgstr "Alap rendszerindító kernel beállítása"
 
@@ -307,6 +297,9 @@ msgstr "A rosszul alapértelmezettként beállított kernel miatt a rendszer el�
 msgid "Settings"
 msgstr "Beállítások"
 
+msgid "Spaced used by ISO in /boot directory on OS drive"
+msgstr ""
+
 msgid "Status"
 msgstr "Állapot"
 
@@ -322,8 +315,11 @@ msgstr "A Proxmox 6.x tároló engedélyezése."
 msgid "This will fail to remove a linux-image-* kernel if it is still active."
 msgstr "Meg fog hiúsulni a linux-image-* kernel eltávolítása, ha még aktív."
 
-msgid "This will install the latest 5.0 kernel."
-msgstr "A legutolsó 5.0-ás kernel telepítése."
+msgid "This will install the latest 5.4 kernel."
+msgstr ""
+
+msgid "This will opt-out of Portainer's minimal analytics."
+msgstr ""
 
 msgid "This will remove all headers packages with the prefix linux-headers-."
 msgstr "A linux-headers- előtagra illeszkedő összes fejléc csomag eltávolítása."
@@ -343,6 +339,12 @@ msgstr "Frissítések"
 msgid "Version"
 msgstr "Verzió"
 
+msgid "Web port"
+msgstr ""
+
+msgid "Web port and agent port cannot be the same."
+msgstr ""
+
 msgid ""
 "When connecting via ssh, the ssh key will be different than the "
 "OpenMediaVault ssh key and need to be updated on the client system."
@@ -361,14 +363,8 @@ msgstr "és fut"
 msgid "apt clean"
 msgstr "apt clean"
 
-msgid "disabled"
-msgstr "letiltva"
-
 msgid "dist-upgrade"
 msgstr "dist-upgrade"
-
-msgid "enabled"
-msgstr "engedélyezve"
 
 msgid "n/a"
 msgstr "nem értelmezett"

@@ -3,7 +3,7 @@
  * @author    Volker Theile <volker.theile@openmediavault.org>
  * @author    OpenMediaVault Plugin Developers <plugins@omv-extras.org>
  * @copyright Copyright (c) 2009-2013 Volker Theile
- * @copyright Copyright (c) 2013-2019 OpenMediaVault Plugin Developers
+ * @copyright Copyright (c) 2013-2020 OpenMediaVault Plugin Developers
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -92,21 +92,6 @@ Ext.define("OMV.module.admin.system.omvextras.Repos", {
                 icon: "images/erase.png",
                 handler: Ext.Function.bind(me.onCommandButton, me, [ "clean" ])
             }]
-        },{
-            id: me.getId() + "-backports",
-            xtype: "button",
-            text: _("Backports"),
-            scope: me,
-            icon: "images/software.png",
-            menu: [{
-                text: _("Enable Backports"),
-                icon: "images/led_green.png",
-                handler: Ext.Function.bind(me.onBackportsButton, me, [ "YES" ])
-            },{
-                text: _("Disable Backports"),
-                icon: "images/led_red.png",
-                handler: Ext.Function.bind(me.onBackportsButton, me, [ "NO" ])
-            }]
         });
         return items;
     },
@@ -130,148 +115,10 @@ Ext.define("OMV.module.admin.system.omvextras.Repos", {
                 fieldLabel: _("Extras repo"),
                 checked: false
             },{
-                xtype: "textfield",
+                xtype: "checkbox",
                 name: "backportsStatus",
                 fieldLabel: _("Backports"),
-                submitValue: false
-            }]
-        },{
-            xtype: "fieldset",
-            title: _("Docker"),
-            fieldDefaults: {
-                labelSeparator: ""
-            },
-            items: [{
-                xtype: "textfield",
-                name: "dockerStorage",
-                fieldLabel: _("Docker Storage"),
-                allowBlank: true,
-                value: "/var/lib/docker",
-                plugins: [{
-                    ptype: "fieldinfo",
-                    text: _("Path to Docker images and containers storage. Leave blank to use custom /etc/docker/daemon.json.")
-                }]
-            },{
-                xtype: "button",
-                name: "installDocker",
-                text: _("Install Docker"),
-                scope: this,
-                handler: Ext.Function.bind(me.onCommandButton, me, [ "docker_install" ]),
-                margin: "0 5 5 0"
-            },{
-                xtype: "button",
-                name: "removeDocker",
-                text: _("Remove Docker"),
-                scope: this,
-                handler: Ext.Function.bind(me.onCommandButton, me, [ "docker_remove" ]),
-                margin: "0 0 5 0"
-            },{
-                xtype: "textfield",
-                name: "dockerStatus",
-                fieldLabel: _("Status"),
-                submitValue: false
-            },{
-                xtype: "textfield",
-                name: "dockerVersion",
-                fieldLabel: _("Version"),
-                submitValue: false
-            },{
-                border: false,
-                html: "<ul>" +
-                        "<li>" + _("Install Docker will install the docker-compose package. Location: /usr/bin/ on all systems.") + "</li>" +
-                        "<li>" + _("Install Docker will download and place a newer docker-compose in /usr/local/bin/ on 64 bit x86 systems only.") + "</li>" +
-                        "<li>" + _("Install Docker will restart the docker service if daemon.json changes.") + "</li>" +
-                        "<li>" + _("Remove Docker will remove the docker-compose package.") + "</li>" +
-                        "<li>" + _("Remove Docker will delete docker-compose from /usr/local/bin/.") + "</li>" +
-                      "</ul>"
-            }]
-        },{
-            xtype: "fieldset",
-            title: _("Portainer"),
-            fieldDefaults: {
-                labelSeparator: ""
-            },
-            items: [{
-                xtype: "button",
-                name: "installPortainer",
-                text: _("Install Portainer"),
-                scope: this,
-                handler: Ext.Function.bind(me.onCommandButton, me, [ "portainer_install" ]),
-                margin: "0 5 5 0"
-            },{
-                xtype: "button",
-                name: "removePortainer",
-                text: _("Remove Portainer"),
-                scope: this,
-                handler: Ext.Function.bind(me.onCommandButton, me, [ "portainer_remove" ]),
-                margin: "0 5 5 0"
-            },{
-                xtype: "button",
-                name: "showPortainer",
-                text: _("Open Portainer web interface"),
-                scope: this,
-                handler: function() {
-                    window.open("http://" + location.hostname + ":9000", "_blank");
-                },
-                margin: "0 0 5 0"
-            },{
-                xtype: "textfield",
-                name: "portainerStatus",
-                fieldLabel: _("Status"),
-                submitValue: false
-            },{
-                border: false,
-                html: "<ul>" +
-                        "<li>" + _("Install Portainer will install the docker-ce package if not already installed.") + "</li>" +
-                        "<li>" + _("Install Portainer will update Portainer to the latest image if the image already exists.") + "</li>" +
-                        "<li>" + _("Portainer will listen on port 9000 for the web interface and 8000 for the agent.") + "</li>" +
-                        "<li>" + _("Remove Portainer will remove the Portainer image and container but the volume will not be removed.") + "</li>" +
-                      "</ul>"
-            }]
-        },{
-            xtype: "fieldset",
-            title: _("Cockpit"),
-            fieldDefaults: {
-                labelSeparator: ""
-            },
-            items: [{
-                xtype: "button",
-                name: "installCockpit",
-                text: _("Install Cockpit"),
-                scope: this,
-                handler: Ext.Function.bind(me.onCommandButton, me, [ "cockpit_install" ]),
-                margin: "0 5 5 0"
-            },{
-                xtype: "button",
-                name: "removeCockpit",
-                text: _("Remove Cockpit"),
-                scope: this,
-                handler: Ext.Function.bind(me.onCommandButton, me, [ "cockpit_remove" ]),
-                margin: "0 5 5 0"
-            },{
-                xtype: "button",
-                name: "showCockpit",
-                text: _("Open Cockpit web interface"),
-                scope: this,
-                handler: function() {
-                    window.open("http://" + location.hostname + ":9090", "_blank");
-                },
-                margin: "0 0 5 0"
-            },{
-                xtype: "textfield",
-                name: "cockpitStatus",
-                fieldLabel: _("Status"),
-                submitValue: false
-            },{
-                xtype: "textfield",
-                name: "cockpitVersion",
-                fieldLabel: _("Version"),
-                submitValue: false
-            },{
-                border: false,
-                html: "<ul>" +
-                        "<li>" + _("Cockpit listens on port 9090 for the web interface.") + "</li>" +
-                      "</ul>"
+                checked: true
             }]
         }];
     },
@@ -295,20 +142,6 @@ Ext.define("OMV.module.admin.system.omvextras.Repos", {
                 break;
             case "clean":
                 msg = _("Running omv-aptclean ...");
-                break;
-            case "cockpit_install":
-            case "cockpit_remove":
-            case "docker_install":
-            case "docker_remove":
-            case "portainer_install":
-            case "portainer_remove":
-                str = command.split("_");
-                if (str[1] == "remove") {
-                  action = _("Removing");
-                } else {
-                  action = _("Installing");
-                }
-                msg = action + " " + str[0] + " ...";
                 break;
         }
         var wnd = Ext.create("OMV.window.Execute", {
@@ -343,32 +176,6 @@ Ext.define("OMV.module.admin.system.omvextras.Repos", {
         wnd.setButtonDisabled("close", true);
         wnd.show();
         wnd.start();
-    },
-
-    onBackportsButton: function(command) {
-        var me = this;
-        var msg = "";
-        if (command == "NO") {
-            msg = _("Disabling backports repo ...");
-        } else {
-            msg = _("Enabling backports repo ...");
-        }
-        OMV.MessageBox.wait(null, msg);
-        OMV.Rpc.request({
-            scope: me,
-            relayErrors: false,
-            rpcData: {
-                service: "OmvExtras",
-                method: "doBackports",
-                params: {
-                    "command": command
-                }
-            },
-            success: function(id, success, response) {
-                me.doReload();
-                OMV.MessageBox.hide();
-            }
-        });
     }
 });
 

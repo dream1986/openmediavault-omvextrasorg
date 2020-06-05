@@ -3,7 +3,7 @@
  * @author    Volker Theile <volker.theile@openmediavault.org>
  * @author    OpenMediaVault Plugin Developers <plugins@omv-extras.org>
  * @copyright Copyright (c) 2009-2013 Volker Theile
- * @copyright Copyright (c) 2013-2019 OpenMediaVault Plugin Developers
+ * @copyright Copyright (c) 2013-2020 OpenMediaVault Plugin Developers
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -122,7 +122,7 @@ Ext.define("OMV.module.admin.system.omvextras.Kernel", {
                 border: false,
                 html: "<ul>" +
                         "<li>" + _("This will enable the Proxmox 6.x repo.") + "</li>" +
-                        "<li>" + _("This will install the latest 5.3 kernel.") + "</li>" +
+                        "<li>" + _("This will install the latest 5.4 kernel.") + "</li>" +
                       "</ul>"
             },{
                 xtype: "button",
@@ -161,7 +161,7 @@ Ext.define("OMV.module.admin.system.omvextras.Kernel", {
                              "<li>" + _("When connecting via ssh, the ssh key will be different than the OpenMediaVault ssh key and need to be updated on the client system.") + "</li>" +
                              "<li>" + _("IP Address will be set by DHCP.  Using static DHCP is recommended for headless servers.") + "</li>" +
                              "<li>" + _("When logging in remotely, start clonezilla with:  <b>sudo clonezilla</b>") + "</li>" +
-                             "<li>" + _("ISO uses approximately 139 Mb in /boot directory on OS drive.") + "</li>" +
+                             "<li>" + _("Spaced used by ISO in /boot directory on OS drive") + ": 251M" + "</li>" +
                          "</ul>"
             },{
                 xtype: "button",
@@ -194,7 +194,7 @@ Ext.define("OMV.module.admin.system.omvextras.Kernel", {
                              "<li>" + _("Not recommended for headless servers.  SSH is not enabled by default.") + "</li>" +
                              "<li>" + _("Default username: <b>user</b> and password: <b>live</b>") + "</li>" +
                              "<li>" + _("IP Address will be set by DHCP.") + "</li>" +
-                             "<li>" + _("ISO uses approximately 219 Mb in /boot directory on OS drive.") + "</li>" +
+                             "<li>" + _("Spaced used by ISO in /boot directory on OS drive") + ": 338M" + "</li>" +
                          "</ul>"
             },{
                 xtype: "button",
@@ -227,7 +227,7 @@ Ext.define("OMV.module.admin.system.omvextras.Kernel", {
                              "<li>" + _("SSH server is enabled by default.  Login with username: <b>root</b> and password: <b>openmediavault</b>") + "</li>" +
                              "<li>" + _("When connecting via ssh, the ssh key will be different than the OpenMediaVault ssh key and need to be updated on the client system.") + "</li>" +
                              "<li>" + _("IP Address will be set by DHCP.  Using static DHCP is recommended for headless servers.") + "</li>" +
-                             "<li>" + _("ISO uses approximately 381 Mb in /boot directory on OS drive.") + "</li>" +
+                             "<li>" + _("Spaced used by ISO in /boot directory on OS drive") + ": 691M" + "</li>" +
                          "</ul>"
             },{
                 xtype: "button",
@@ -371,6 +371,6 @@ OMV.WorkspaceManager.registerPanel({
     id: "kernel",
     path: "/system/omvextras",
     text: _("Kernel"),
-    position: 20,
+    position: 40,
     className: "OMV.module.admin.system.omvextras.Kernel"
 });

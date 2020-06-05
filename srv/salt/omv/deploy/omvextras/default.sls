@@ -1,6 +1,6 @@
 # @license   http://www.gnu.org/licenses/gpl.html GPL Version 3
 # @author    Volker Theile <volker.theile@openmediavault.org>
-# @copyright Copyright (c) 2009-2019 Volker Theile
+# @copyright Copyright (c) 2019-2020 OpenMediaVault Plugin Developers
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -22,7 +22,7 @@ configure_apt_sources_list_omvextras:
   file.managed:
     - name: "/etc/apt/sources.list.d/omvextras.list"
     - source:
-      - salt://{{ slspath }}/files/etc-apt-sources_list_d-omvextras_list.j2
+      - salt://{{ tpldir }}/files/etc-apt-sources_list_d-omvextras_list.j2
     - template: jinja
     - context:
         config: {{ config | json }}
@@ -42,7 +42,7 @@ configure_apt_pref_omvextras:
   file.managed:
     - name: "/etc/apt/preferences.d/omvextras.pref"
     - source:
-      - salt://{{ slspath }}/files/etc-apt-preferences_d-omvextras_pref.j2
+      - salt://{{ tpldir }}/files/etc-apt-preferences_d-omvextras_pref.j2
     - template: jinja
     - user: root
     - group: root

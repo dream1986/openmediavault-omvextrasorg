@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the openmediavault-omvextrasorg package.
 # 
 # Translators:
-# songming <by@songming.me>, 2013-2016,2018-2019
+# songming <by@songming.me>, 2013-2016,2018-2020
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-omvextras.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-05 13:51-0600\n"
-"PO-Revision-Date: 2019-11-05 19:51+0000\n"
+"POT-Creation-Date: 2020-04-19 10:33-0500\n"
+"PO-Revision-Date: 2020-04-19 15:33+0000\n"
 "Last-Translator: Aaron Murray <aaronmurray27@gmail.com>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-omvextrasorg/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
@@ -17,6 +17,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "Advanced"
+msgstr ""
+
+msgid "Agent port"
+msgstr ""
 
 msgid "Backports"
 msgstr "Backports"
@@ -35,12 +41,6 @@ msgstr "9090作为 Cockpit web 标签页的监听端口。"
 
 msgid "Default username: <b>user</b> and password: <b>live</b>"
 msgstr "默认用户名 <b>user</b>  默认密码: <b>live</b>"
-
-msgid "Disable Backports"
-msgstr "停用 Backports"
-
-msgid "Disabling backports repo ..."
-msgstr "停用 Backports 源中 ..."
 
 msgid "Docker"
 msgstr "Docker "
@@ -66,12 +66,6 @@ msgid ""
 " from ISO."
 msgstr "下载 SystemRescueCD ISO 镜像，配置 grub 从该 ISO镜像 引导启动。"
 
-msgid "Enable Backports"
-msgstr "启用 Backports"
-
-msgid "Enabling backports repo ..."
-msgstr "启用 backports 源中 ..."
-
 msgid "Extras repo"
 msgstr "扩展源"
 
@@ -95,14 +89,14 @@ msgid ""
 "headless servers."
 msgstr "IP 地址设为 DHCP 自动获取，若是缺省服务器建议使用静态 IP。"
 
-msgid "ISO uses approximately 139 Mb in /boot directory on OS drive."
-msgstr "ISO 镜像大约占用系统盘 /boot 目录 139Mb 空间。"
+msgid "If port is changed, click Install in the Portainer menu again."
+msgstr ""
 
-msgid "ISO uses approximately 219 Mb in /boot directory on OS drive."
-msgstr "ISO 镜像大约占用系统盘 /boot 目录 219Mb 空间。"
+msgid "Illegal docker storage path - cannot use /sharedfolders paths"
+msgstr "Docker 存储路径不能使用共享文件夹路径"
 
-msgid "ISO uses approximately 381 Mb in /boot directory on OS drive."
-msgstr "ISO 镜像大约占用系统盘 /boot 目录 381Mb 空间。"
+msgid "Install"
+msgstr "安装"
 
 msgid "Install Clonezilla"
 msgstr "安装再生龙 Clonezilla"
@@ -110,21 +104,15 @@ msgstr "安装再生龙 Clonezilla"
 msgid "Install Clonezilla ISO ..."
 msgstr "安装再生龙 Clonezilla ISO ..."
 
-msgid "Install Cockpit"
-msgstr "安装 Cockpit"
-
-msgid "Install Docker"
-msgstr "安装 Docker"
-
 msgid ""
 "Install Docker will download and place a newer docker-compose in "
 "/usr/local/bin/ on 64 bit x86 systems only."
-msgstr ""
+msgstr "安装 Docker 将会下载 docker-compose 放到 /usr/local/bin/ 目录，仅支持64位x86系统。"
 
 msgid ""
 "Install Docker will install the docker-compose package. Location: /usr/bin/ "
 "on all systems."
-msgstr ""
+msgstr "安装 Docker 将会安装 docker-compose 包到本地路径：/usr/bin/。"
 
 msgid "Install Docker will restart the docker service if daemon.json changes."
 msgstr "如果 daemon.json 有变更，安装 Docker 将会重启 Docker服务。"
@@ -134,9 +122,6 @@ msgstr "安装 GParted Live"
 
 msgid "Install GParted Live ISO ..."
 msgstr "安装 GParted Live ISO ..."
-
-msgid "Install Portainer"
-msgstr "安装 Portainer"
 
 msgid ""
 "Install Portainer will install the docker-ce package if not already "
@@ -184,11 +169,11 @@ msgstr "不建议使用缺省服务器，因为默认 SSH 没有开启。"
 msgid "OMV-Extras"
 msgstr "OMV-Extras"
 
-msgid "Open Cockpit web interface"
-msgstr "在 web 页打开 Cockpit"
+msgid "Open web"
+msgstr "打开 web 页"
 
-msgid "Open Portainer web interface"
-msgstr "打开 Portainer web 标签页"
+msgid "Opt-out"
+msgstr "Opt-out"
 
 msgid ""
 "Path to Docker images and containers storage. Leave blank to use custom "
@@ -200,8 +185,8 @@ msgstr "Portainer"
 
 msgid ""
 "Portainer will listen on port 9000 for the web interface and 8000 for the "
-"agent."
-msgstr "Portainer 将会在web 标签页监听9000端口 ，在agent代理监听8000端口。"
+"agent unless changed."
+msgstr ""
 
 msgid "Proxmox"
 msgstr "Proxmox"
@@ -227,20 +212,14 @@ msgstr "从 SystemRescueCD 启动一次"
 msgid "Reboot with the Proxmox kernel before removing non-Proxmox kernels."
 msgstr "在删除 non-Proxmox 内核后以 Proxmox内核重启。"
 
-msgid "Remove Cockpit"
-msgstr "删除  Cockpit"
-
-msgid "Remove Docker"
-msgstr "删除 Docker"
+msgid "Remove"
+msgstr "删除"
 
 msgid "Remove Docker will delete docker-compose from /usr/local/bin/."
 msgstr "删除 Docker 将会删除 /usr/local/bin/ 路径下的 docker-compose"
 
 msgid "Remove Docker will remove the docker-compose package."
-msgstr ""
-
-msgid "Remove Portainer"
-msgstr "删除 Portainer"
+msgstr "删除 Docker 将会一起删掉 docker-compose 包。"
 
 msgid ""
 "Remove Portainer will remove the Portainer image and container but the "
@@ -255,6 +234,12 @@ msgstr "删除中"
 
 msgid "Removing non-Proxmox kernels ..."
 msgstr "删除 non-Proxmox 内核中 ..."
+
+msgid "Restart"
+msgstr "重启"
+
+msgid "Restarting docker ..."
+msgstr "重启 Docker ..."
 
 msgid "Running apt-get dist-upgrade ..."
 msgstr "运行 apt-get dist-upgrade 中 ..."
@@ -281,6 +266,11 @@ msgid ""
 "password: <b>live</b>"
 msgstr "默认开启 SSH 服务，登录用户名: <b>user</b>，密码: <b>live</b>"
 
+msgid ""
+"Save will rewrite daemon.json and restart docker if Docker Storage path has "
+"changed."
+msgstr "如果存储路径变更了，保存将覆盖 daemon.json 和重启 Docker。"
+
 msgid "Set as default boot kernel"
 msgstr "设置默认启动内核"
 
@@ -305,6 +295,9 @@ msgstr "如果设置的默认启动内核错误而不能启动系统，可以通
 msgid "Settings"
 msgstr "设置"
 
+msgid "Spaced used by ISO in /boot directory on OS drive"
+msgstr "ISO 会使用系统盘 /boot 路径的空间"
+
 msgid "Status"
 msgstr "状态"
 
@@ -320,8 +313,11 @@ msgstr "这将启用 Proxmox 6.x 源。"
 msgid "This will fail to remove a linux-image-* kernel if it is still active."
 msgstr "如果 linux-image-*内核处于使用状态删除该内核将失败。"
 
-msgid "This will install the latest 5.0 kernel."
-msgstr "这将安装最新的5.0版本内核。"
+msgid "This will install the latest 5.4 kernel."
+msgstr ""
+
+msgid "This will opt-out of Portainer's minimal analytics."
+msgstr "这将会 opt-out Portainer的最小分析。"
 
 msgid "This will remove all headers packages with the prefix linux-headers-."
 msgstr "这将删除前缀为 linux-headers- 的所有软件包。"
@@ -341,6 +337,12 @@ msgstr "更新"
 msgid "Version"
 msgstr "版本"
 
+msgid "Web port"
+msgstr ""
+
+msgid "Web port and agent port cannot be the same."
+msgstr ""
+
 msgid ""
 "When connecting via ssh, the ssh key will be different than the "
 "OpenMediaVault ssh key and need to be updated on the client system."
@@ -359,14 +361,8 @@ msgstr "运行中"
 msgid "apt clean"
 msgstr "apt clean"
 
-msgid "disabled"
-msgstr "停用"
-
 msgid "dist-upgrade"
 msgstr "dist-upgrade"
-
-msgid "enabled"
-msgstr "启用"
 
 msgid "n/a"
 msgstr "n/a"

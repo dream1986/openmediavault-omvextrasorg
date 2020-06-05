@@ -10,14 +10,20 @@ declare cockpitPackages=""
 
 # docker
 declare dockerPackages=""
+declare dockerStorage=""
 declare -i download=0
+declare -i agentport=8000
+declare -i webport=9000
 daemonJson="/etc/docker/daemon.json"
 dockerBin="/usr/bin/docker"
 dockerCompose="/usr/local/bin/docker-compose"
-dockerComposeVersion="1.24.1"
+dockerComposeVersion="1.25.4"
 dockerComposeUrl="https://github.com/docker/compose/releases/download/${dockerComposeVersion}/docker-compose-Linux-x86_64"
+dockerOverrideDir="/etc/systemd/system/docker.service.d"
+dockerOverrideFile="${dockerOverrideDir}/waitLocalFs.conf"
 
 # portainer
+declare -i optout=0
 portainerImage="portainer/portainer"
 portainerName="portainer"
 portainerVolume="portainer_data"
@@ -30,9 +36,9 @@ setArch()
 
 checkDNS()
 {
-  host="/usr/bin/host"
-  if [ -f "${host}" ]; then
-    if ! ${host} hub.docker.com > /dev/null; then
+  getent="/usr/bin/getent"
+  if [ -f "${getent}" ]; then
+    if ! ${getent} hosts hub.docker.com > /dev/null; then
       echo "DNS error.  Exiting ..."
       exit 0
     else
@@ -45,7 +51,7 @@ setCockpitPackages()
 {
   cockpitPackages="cockpit cockpit-docker cockpit-packagekit"
   if [[ "${arch}" == "amd64" ]] || [[ "${arch}" == "i386" ]]; then
-    cockpitPackages="${cockpitPackages} cockpit-machines virtinst qemu-kvm qemu-utils libvirt-dbus cockpit-storaged"
+    cockpitPackages="${cockpitPackages} cockpit-machines virtinst qemu-kvm qemu-utils libvirt-dbus cockpit-storaged dnsmasq-base"
   fi
 }
 
@@ -66,6 +72,26 @@ setExports()
   export DEBIAN_FRONTEND=noninteractive
   export APT_LISTCHANGES_FRONTEND=none
   export LANG=C.UTF-8
+}
+
+setConfig()
+{
+  # if openmediavault is installed, get docker storage path
+  if [ -f "/usr/share/openmediavault/scripts/helper-functions" ]; then
+    # source openmediavault functions
+    . /etc/default/openmediavault
+    . /usr/share/openmediavault/scripts/helper-functions
+
+    xpath="/config/system/omvextras"
+    dockerStorage=$(omv_config_get "${xpath}/dockerStorage")
+    echo "Docker storage :: ${dockerStorage}"
+    agentport=$(omv_config_get "${xpath}/agentport")
+    echo "Agent port:: ${agentport}"
+    webport=$(omv_config_get "${xpath}/webport")
+    echo "Web port:: ${webport}"
+    optout=$(omv_config_get "${xpath}/optout")
+    echo "Opt-out :: ${optout}"
+  fi
 }
 
 updateRepos()
@@ -104,6 +130,11 @@ removeDocker()
 {
   setExports
   setDockerPackages
+
+  if [ -f "${dockerOverrideFile}" ]; then
+    rm -f "${dockerOverrideFile}"
+    systemctl daemon-reload
+  fi
 
   # remove docker
   status=0
@@ -190,24 +221,61 @@ installCockpit()
   fi
 }
 
+configDocker()
+{
+  setExports
+
+  # if path specified, write config file
+  if [ -n "${dockerStorage}" ]; then
+    daemonJsonTemp="$(mktemp)"
+    cat <<EOF > ${daemonJsonTemp}
+{
+  "data-root": "${dockerStorage}"
+}
+EOF
+
+    if ! diff --brief "${daemonJsonTemp}" "${daemonJson}"; then
+      echo "Docker storage path has changed."
+      cp "${daemonJsonTemp}" "${daemonJson}"
+      status=1
+    fi
+    rm -f "${daemonJsonTemp}"
+  fi
+
+
+  # enable and restart docker service
+  if [ ${status} -eq 1 ]; then
+    systemctl enable docker.service
+    systemctl restart docker.service
+  else
+    echo "Skipping docker restart."
+  fi
+}
+
+configOverride()
+{
+  # create override to wait for local filesystems
+  if [ -d "${dockerOverrideDir}" ]; then
+    echo "Create override directory ..."
+    mkdir -p "${dockerOverrideDir}"
+  fi
+
+  echo "Create override file ..."
+  cat <<EOF > ${dockerOverrideFile}
+[Unit]
+After=local-fs.target
+EOF
+  echo "Reload systemd daemon ..."
+  systemctl daemon-reload
+}
+
 installDocker()
 {
   setExports
   setDockerPackages
-
-  # if openmediavault is installed, get docker storage path
-  if [ -f "/usr/share/openmediavault/scripts/helper-functions" ]; then
-    # source openmediavault functions
-    . /etc/default/openmediavault
-    . /usr/share/openmediavault/scripts/helper-functions
-
-    xpath="/config/system/omvextras"
-    dockerStorage=$(omv_config_get "${xpath}/dockerStorage")
-    echo "Docker storage :: ${dockerStorage}"
-  fi
+  configOverride
 
   # check to see if already installed to avoid restarting service
-  status=0
   for pkg in ${dockerPackages}; do
     if ! dpkg --list | grep --quiet "${pkg}"; then
       status=1
@@ -232,30 +300,9 @@ installDocker()
     fi
   fi
 
-  # if path specified, write config file
-  if [ -n "${dockerStorage}" ]; then
-    daemonJsonTemp="$(mktemp)"
-    cat <<EOF > ${daemonJsonTemp}
-{
-  "data-root": "${dockerStorage}"
-}
-EOF
+  # Write daemon.json file
+  configDocker
 
-    if ! diff --brief "${daemonJsonTemp}" "${daemonJson}"; then
-      echo "Docker storage path has changed."
-      cp "${daemonJsonTemp}" "${daemonJson}"
-      status=1
-    fi
-    rm -f "${daemonJsonTemp}"
-  fi
-
-  # enable and restart docker service
-  if [ ${status} -eq 1 ]; then
-    systemctl enable docker.service
-    systemctl restart docker.service
-  else
-    echo "Skipping docker restart since it was already installed."
-  fi
   if [[ "${arch}" == "amd64" ]]; then
     # download docker-compose and place in /usr/local/bin/ if current version is older
     if [ -f "${dockerCompose}" ]; then
@@ -276,7 +323,6 @@ EOF
 
 installPortainer()
 {
-
   if [ ! -f "${dockerBin}" ]; then
     installDocker
   fi
@@ -290,15 +336,21 @@ installPortainer()
     docker volume create "${portainerVolume}"
   fi
 
+  # add opt-out flag if set
+  if [ ${optout} -eq 1 ]; then
+    optoutArg="--no-analytics"
+  fi
+
   # pull and start portainer
   echo "Pulling and starting portainer ..."
-  docker run -d --name "${portainerName}" -p 9000:9000 -p 8000:8000 --restart=unless-stopped -v /var/run/docker.sock:/var/run/docker.sock -v ${portainerVolume}:/data portainer/portainer
+  docker run -d --name "${portainerName}" -p ${webport}:9000 -p ${agentport}:8000 --restart=unless-stopped -v /var/run/docker.sock:/var/run/docker.sock -v ${portainerVolume}:/data portainer/portainer ${optoutArg}
   if [ $? -gt 0 ]; then
     echo "Something went wrong trying to pull and start portainer ..."
   fi
 }
 
 setArch
+setConfig
 
 option="${1}"
 state="${2}"
@@ -334,6 +386,8 @@ case ${option} in
   *)
     if [[ "${state}" == "remove" ]]; then
       removeDocker
+    elif [[ "${state}" == "config" ]]; then
+      configDocker
     else
       installDocker
     fi
